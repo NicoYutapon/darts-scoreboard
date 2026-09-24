@@ -1,0 +1,44 @@
+{
+  "entities": {
+    "Tournament": {
+      "title": "Tournament",
+      "description": "Represents the live darts match and tournament configuration",
+      "type": "object",
+      "properties": {
+        "tournamentName": { "type": "string" },
+        "roundName": { "type": "string" },
+        "legCount": { "type": "number" },
+        "activeMatchId": { "type": "string" },
+        "p1Id": { "type": "string" },
+        "p2Id": { "type": "string" },
+        "fontFamily": { "type": "string" },
+        "legs": { "type": "array" },
+        "tournamentMatches": { "type": "array" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["tournamentName", "roundName", "legCount", "legs", "tournamentMatches"]
+    },
+    "Player": {
+      "title": "Player",
+      "description": "A player in the tournament",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "isParticipating": { "type": "boolean" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "name"]
+    }
+  },
+  "firestore": {
+    "/tournaments/{tournamentId}": {
+      "schema": "Tournament",
+      "description": "Tournament configuration and live scoreboard state"
+    },
+    "/tournaments/{tournamentId}/players/{playerId}": {
+      "schema": "Player",
+      "description": "Registered players for the tournament"
+    }
+  }
+}

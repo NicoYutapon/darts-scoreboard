@@ -1,0 +1,6 @@
+{
+  "name": "ダーツ配信スコアボード & 試合管理システム",
+  "description": "配信画面・試合結果入力・選手管理の3画面でリアルタイムにスコアやブレイク（B）を黄色点灯表示するシンプルなダーツ大会運営ツール。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
